@@ -36,7 +36,8 @@ class video_model extends CI_Model {
     
     public function get_video_title($video) {
         
-        $title = pathinfo($video);
+        $title = urldecode($video);
+        $title = pathinfo($title);
         return $title['filename'];
         
     }
